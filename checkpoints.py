@@ -35,18 +35,17 @@ class Solution:
             #return type: int
             
             #TODO: Write code below to returnn an int with the solution to the prompt.
-            counter = 0
-           counter = 0
-            largestCheckPoint = 0
-            for i in checkpoints:
-                 if i == checkpoints[0]:
-                      counter += 1
-                      continue
-                 currCheckPoint = i - checkpoints[counter - 1]
-                 counter += 1
-                 if currCheckPoint >= largestCheckPoint:
-                      largestCheckPoint = currCheckPoint
-                 return largestCheckPoint
+        counter = 0
+        largestCheckPoint = 0
+        for i in checkpoints:
+            if i == checkpoints[0]:
+                counter += 1
+                continue
+            currCheckPoint = i - checkpoints[counter - 1]
+            counter += 1
+            if currCheckPoint >= largestCheckPoint:
+                largestCheckPoint = currCheckPoint
+        return largestCheckPoint
         
 
 def main():
