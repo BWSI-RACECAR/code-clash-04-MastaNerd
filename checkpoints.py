@@ -41,7 +41,7 @@ class Solution:
             if i == checkpoints[0]:
                 counter += 1
                 continue
-            currCheckPoint = i - checkpoints[counter - 1]
+            currCheckPoint = abs(i - checkpoints[counter - 1])
             counter += 1
             if currCheckPoint >= largestCheckPoint:
                 largestCheckPoint = currCheckPoint
