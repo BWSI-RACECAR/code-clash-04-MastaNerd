@@ -35,12 +35,16 @@ class Solution:
             #return type: int
             
             #TODO: Write code below to returnn an int with the solution to the prompt.
-        for i in range(0, len(checkpoints)-1):
-            for x in range(0, len(checkpoints)-1):
-                if checkpoints[x > checkpoints[x+1]]:
-                    temp = checkpoints[x]
-                    checkpoints[x] = checkpoints[x+1]
-                    checkpoints[x+1] = temp
+
+        for i in range(0, len(checkpoints)):
+            smallCurrNum = i
+            for x in range(i + 1, len(checkpoints)):
+                if checkpoints[x] < checkpoints[smallCurrNum]:
+                    smallCurrNum = x
+            if (smallCurrNum != i):
+                lowestValue = checkpoints[smallCurrNum] 
+                checkpoints[smallCurrNum] = checkpoints[i]
+                checkpoints[i] = lowestValue
         
         counter = 0
         largestCheckPoint = 0
